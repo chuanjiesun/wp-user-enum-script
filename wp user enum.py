@@ -3,7 +3,6 @@
 #例如python wp.py http://www.kaifazhe.me/ 2000
 import re, sys, threading, os
 from urllib import parse, request
-#from http import client
 from time import sleep, time, ctime
 from bs4 import BeautifulSoup as beautifulsoup
 
@@ -40,8 +39,6 @@ def meiju(k):
 					if (excepts[i]-excepts[i-1] == 1) and (excepts[i+1] - excepts[i] == 1): 
 						#print(excepts[i-1], excepts[i], excepts[i+1])
 						#实际由于多线程不一定相邻相减，有任意两个相减为1
-						#print('{0}和{1}差值接近'.format(excepts[length-1],excepts[j]))
-						#print('貌似结束了 ： {}'.format(excepts[i-1]))
 						count.append(excepts[i-1])
 						flag = False
 
@@ -60,7 +57,6 @@ def main():
 		xiancheng_num = 50
 	else:
 		xiancheng_num = num
-	#xiancheng_num = (50 if t else num)
 	flag = True
 	for i in range(1,num+1,xiancheng_num):#相当于开50个线程
 
@@ -72,7 +68,6 @@ def main():
 			threads.append(t)
 			t.start()
 		for j in range(len(threads)):
-			#print(len(threads),j)
 			threads[j].join()
 		threads.clear()
 
