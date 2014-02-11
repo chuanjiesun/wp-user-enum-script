@@ -88,7 +88,7 @@ def main():
 
 
 if __name__ =='__main__':
-	if len(sys.argv) ==3 or len(sys.argv) ==5:
+	if len(sys.argv) ==3 :
 		t1 = time()
 		print('start at : {}'.format(ctime()))
 		print('len of params is : {}'.format(len(sys.argv)))
